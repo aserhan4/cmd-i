@@ -1,5 +1,5 @@
 {
-    "name": "cmde",
+    "name": "cmdi",
     "version": "1.0",
     "manifest_version": 3,
     "description": "sf workflow",
@@ -13,15 +13,15 @@
         }
     ],
     "commands": {
-        "cmde": {
+        "cmdi": {
             "suggested_key": {
-                "default": "Ctrl+E"
+                "default": "Ctrl+I"
             },
             "description": "everything"
         },
         "_execute_action": {
             "suggested_key": {
-                "default": "Ctrl+Shift+E"
+                "default": "Ctrl+Shift+I"
             }
         }
     },
