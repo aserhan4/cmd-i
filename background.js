@@ -1,8 +1,8 @@
 console.log("background is up");
 
-chrome.commands.onCommand.addListener(cmdE);
+chrome.commands.onCommand.addListener(cmdI);
 
-function cmdE(command, tab) {
+function cmdI(command, tab) {
     console.log("shortcut worked",tab.id);
     chrome.tabs.sendMessage(tab.id, {type: command}, (r) => {
         console.log(`callback successful ${r.response}`);
