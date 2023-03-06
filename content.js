@@ -70,7 +70,7 @@ function buildLINarrowSearch5(companyName, companyID) {
 
 
         sendResponse({response: list_goog})
-    } if (currentURL.startsWith("https://atolio.my.salesforce.com/001")) {
+     if (currentURL.startsWith("https://atolio.my.salesforce.com/001")) {
 	let keywords = ["executive leadership","CEO"];
 
         let d = new Date();
