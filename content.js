@@ -1,5 +1,4 @@
 console.log("content script is good");
-chrome.runtime.onMessage.addListener(gotMessage);
 
 function buildLINarrowSearch1(companyName, companyID) {
     let encodedCompanyNameURI = "text%3A" + encodeURIComponent(companyName.trim()) + "%2C"
