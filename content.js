@@ -1,4 +1,5 @@
 console.log("content script is good");
+chrome.runtime.onMessage.addListener(gotMessage);
 
 function buildLINarrowSearch1(companyName, companyID) {
     let encodedCompanyNameURI = "text%3A" + encodeURIComponent(companyName.trim()) + "%2C"
@@ -68,8 +69,47 @@ function buildLINarrowSearch5(companyName, companyID) {
 
 
 
+function gotMessage(message, sender, sendResponse) {
+    let currentURL = document.URL;
+
+    if (currentURL.startsWith("https://atolio.my.salesforce.com/003")) {
+        let d = new Date();
+        let foundName = document.getElementById("con2_ileinner").textContent;
+        let foundAccount = document.getElementById("con4_ileinner").textContent;
+        let foundTitle = document.getElementById("con5_ileinner").textContent;
+        let foundLI = document.getElementById("00N3h000007s6Uw_ileinner").innerHTML.split(`"`)[1];
+        let foundCampaign = document.getElementById("00N3h00000HxFfp_ileinner").textContent;
+        chrome.storage.sync.set({snippet_storage: `${d.toLocaleDateString()} - `});
+
+
+
+   // set links
+        let list_goog = [
+            foundLI.concat("shares/"),
+            `https://www.youtube.com/results?search_query=${foundName} ${foundAccount}`,
+            `https://www.google.com/search?q=${foundName} ${foundAccount}`,
+            `https://www.google.com/search?q="${foundName}" ${foundAccount}`,
+            `https://www.google.com/search?q=${foundName} interview`,
+            `https://www.google.com/search?q="${foundName}" interview `,
+            `https://www.owltail.com/search/"${foundName}"`,
+            `https://twitter.com/search?q=${foundName}`
+            
+
+        ];
+
+    // if you want to make results from the past year, just add &tbs=qdr:y&sa=X
+
+        if (foundCampaign == "Engineering Recruiting") {
+            list_goog = [
+                `https://www.google.com/search?q="${foundName}" ${foundAccount}&tbs=qdr:y&sa=X`,
+                `https://www.google.com/search?q="${foundName}" ${foundAccount} interview`,
+                `https://www.google.com/search?q="${foundName}" ${foundAccount} podcast`,
+                `https://twitter.com/search?q=${foundName} ${foundAccount}`
+            ]
+        };
+
         sendResponse({response: list_goog})
-     if (currentURL.startsWith("https://atolio.my.salesforce.com/001")) {
+    } else if (currentURL.startsWith("https://atolio.my.salesforce.com/001")) {
 	let keywords = ["executive leadership","CEO"];
 
         let d = new Date();
@@ -82,8 +122,6 @@ function buildLINarrowSearch5(companyName, companyID) {
 	let Manager_IC = buildLINarrowSearch3(foundAccount, foundLinkedInID)
         let Innovation = buildLINarrowSearch4(foundAccount, foundLinkedInID)
         let AllDecision_Makers = buildLINarrowSearch5(foundAccount, foundLinkedInID)
-
-
 
 
         let list_goog = [
@@ -110,4 +148,7 @@ function buildLINarrowSearch5(companyName, companyID) {
             };
         });
     }
+}
+
+
 
