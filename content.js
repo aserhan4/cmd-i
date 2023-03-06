@@ -125,7 +125,6 @@ function gotMessage(message, sender, sendResponse) {
 
 
         let list_goog = [
-            `https://www.google.com/search?q=${foundAccount}`,
             foundLinkedInSalesNavInisghts,
             	CIOCTO,
 		Execs,
