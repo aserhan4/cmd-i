@@ -1,7 +1,7 @@
 {
     "name": "cmdi",
     "version": "1.0",
-    "manifest_version": 1,
+    "manifest_version": 3,
     "description": "sf workflow",
     "background": {
         "service_worker": "background.js"
