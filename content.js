@@ -125,7 +125,6 @@ function gotMessage(message, sender, sendResponse) {
 
 
         let list_goog = [
-            foundLinkedInSalesNavInisghts,
             	CIOCTO,
 		Execs,
 		Manager_IC,
