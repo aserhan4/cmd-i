@@ -111,4 +111,4 @@ function buildLINarrowSearch5(companyName, companyID) {
             };
         });
     }
-}
+
