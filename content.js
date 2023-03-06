@@ -59,7 +59,7 @@ function buildLINarrowSearch5(companyName, companyID) {
         encodedCompanyID :
         encodedCompanyNameURI
     
-	return "https://www.linkedin.com/sales/search/people?_ntb=Dle6w9QoT3qEGqIfDsDK4A%3D%3D&query=(recentSearchParam%3A(id%3A2278123810%2CdoLogHistory%3Atrue)%2Cfilters%3AList((type%3ASENIORITY_LEVEL%2Cvalues%3AList((id%3A6%2Ctext%3ADirector%2CselectionType%3AINCLUDED)%2C(id%3A7%2Ctext%3AVP%2CselectionType%3AINCLUDED)%2C(id%3A8%2Ctext%3ACXO%2CselectionType%3AINCLUDED)%2C(type%3ACURRENT_COMPANY%2Cvalues%3AList((" + encodedCompany + "Type%3AINCLUDED)))))&sessionId=fGlUA2CbSYyULY4cGkGLFg%3D%3D"
+    	return "https://www.linkedin.com/sales/search/people?_ntb=nQlAdaqmQaaBvsYRDl5RuQ%3D%3D&query=(filters%3AList((type%3ACURRENT_COMPANY%2Cvalues%3AList((" + encodedCompany + "Type%3AINCLUDED)))%2C(type%3ASENIORITY_LEVEL%2Cvalues%3AList((id%3A6%2CselectionType%3AINCLUDED)%2C(id%3A7%2CselectionType%3AINCLUDED)%2C(id%3A8%2CselectionType%3AINCLUDED)))))&sessionId=2P9Fx2BSRAKjuSoCtPvIOw%3D%3D"
 }
 
 
