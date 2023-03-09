@@ -89,10 +89,12 @@ function gotMessage(message, sender, sendResponse) {
             `https://www.youtube.com/results?search_query=${foundName} ${foundAccount}`,
             `https://www.google.com/search?q=${foundName} ${foundAccount}`,
             `https://www.google.com/search?q="${foundName}" ${foundAccount}`,
-            `https://www.google.com/search?q=${foundName} interview`,
-            `https://www.google.com/search?q="${foundName}" interview `,
+            `https://www.google.com/search?q=${foundName} interview ${foundAccount}`,
+            `https://www.google.com/search?q="${foundName}" interview ${foundAccount}`,
+		`https://www.google.com/search?q="${foundName}" "webinar" ${foundAccount}`,
+		`https://www.google.com/search?q="${foundName}" "talk" ${foundAccount}`,
             `https://www.owltail.com/search/"${foundName}"`,
-            `https://twitter.com/search?q=${foundName}`
+            `https://twitter.com/search?q=${foundName} ${foundAccount}`
             
 
         ];
